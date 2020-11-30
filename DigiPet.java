@@ -1,9 +1,10 @@
 /*
- * Guido Asbun
- * CS A-170
+ *  Guido Asbun
+ * CS A170
  * 29-November-2020
  * 
  * Exercise 27
+ * DigiPet tester program
  */
 
 public class DigiPet
