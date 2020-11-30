@@ -30,7 +30,11 @@ public class DigiPet
     {
         // Initialize all five fields as appropriate:
         // Your code here:
-        
+        name = newName;
+        lifespan = newLifespan;
+        age = 0;
+        mood = 0;
+        size = 1;
         
     }
 
@@ -59,25 +63,43 @@ public class DigiPet
     public void poke()
     {
         // Your code here
+       mood --;
+       if(mood < -2){
+           mood = -2;
+       }
         
+        makeOlder();
     }
 
     public void pet()
     {
         // Your code here
-        
+        mood ++;
+        if(mood > 2){
+            mood = 2;
+        }
+
+        makeOlder();
     }
     
     public void feed(int amount)
     {
         // Your code here
-        
+        size += amount;
+
+        makeOlder();
     }
 
     public void exercise(int amount)
     {
         // Your code here
-        
+        size -= amount;
+        if(size < 1){
+            System.out.println("No more energy");
+            size = 1;
+        }
+
+        makeOlder();
     }
 
     // (Optional) Modify this method to customize your pet's "appearance" 
@@ -95,11 +117,11 @@ public class DigiPet
         System.out.print(" --(i'm so ");
         switch (mood)
         {
-            case 2: System.out.print("joyful!"); break;
-            case 1: System.out.print("happy"); break;
-            case -1: System.out.print("sad"); break;
-            case -2: System.out.print("angry!"); break;
-            default: System.out.print("meh");
+            case 2: System.out.print("😊"); break;
+            case 1: System.out.print("😀"); break;
+            case -1: System.out.print("😥"); break;
+            case -2: System.out.print("😠"); break;
+            default: System.out.print("😒");
         }
         System.out.println(")");
     }
